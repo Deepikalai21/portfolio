@@ -1,0 +1,408 @@
+/* ==============================
+   General Settings
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #172033;
+    line-height: 1.7;
+}
+
+
+/* ==============================
+   Navigation Bar
+================================= */
+
+.navbar {
+    width: 100%;
+    background: #111827;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #d1d5db;
+    font-size: 17px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #38bdf8;
+}
+
+
+/* ==============================
+   Hero Section
+================================= */
+
+.hero {
+    min-height: 600px;
+    padding: 80px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    background: linear-gradient(
+        135deg,
+        #111827,
+        #1e3a5f
+    );
+    color: white;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.welcome {
+    color: #38bdf8;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    line-height: 1.15;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #38bdf8;
+}
+
+.intro {
+    font-size: 19px;
+    color: #d1d5db;
+    margin-bottom: 30px;
+}
+
+
+/* ==============================
+   Buttons
+================================= */
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #38bdf8;
+    color: #0f172a;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn.secondary {
+    background: transparent;
+    color: white;
+    border: 1px solid #38bdf8;
+}
+
+
+/* ==============================
+   Hero Card
+================================= */
+
+.hero-card {
+    width: 350px;
+    padding: 35px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    text-align: center;
+}
+
+.hero-card h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.hero-card p {
+    color: #cbd5e1;
+    margin-bottom: 25px;
+}
+
+.skill-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.skill-box span {
+    padding: 8px 14px;
+    border: 1px solid #38bdf8;
+    border-radius: 20px;
+    color: #38bdf8;
+}
+
+
+/* ==============================
+   Page Header
+================================= */
+
+.page-header {
+    text-align: center;
+    padding: 80px 20px;
+    background: #111827;
+    color: white;
+}
+
+.page-header h1 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.page-header p:last-child {
+    color: #cbd5e1;
+    font-size: 18px;
+}
+
+
+/* ==============================
+   Common Sections
+================================= */
+
+.section {
+    padding: 70px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 40px;
+    color: #111827;
+}
+
+.content-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.content-box h2 {
+    margin-bottom: 15px;
+    color: #1e3a5f;
+}
+
+.content-box p {
+    margin-bottom: 15px;
+    color: #4b5563;
+}
+
+
+/* ==============================
+   About Grid
+================================= */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+
+/* ==============================
+   Timeline
+================================= */
+
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.timeline-item {
+    background: white;
+    padding: 25px;
+    border-left: 4px solid #38bdf8;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-item h3 {
+    color: #1e3a5f;
+    margin-bottom: 10px;
+}
+
+
+/* ==============================
+   Skills Grid
+================================= */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.skill-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    border-top: 4px solid #38bdf8;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+.skill-card h3 {
+    color: #1e3a5f;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    color: #4b5563;
+}
+
+
+/* ==============================
+   Requirements
+================================= */
+
+.requirements-box {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.requirements-box ul {
+    list-style: none;
+}
+
+.requirements-box li {
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 17px;
+}
+
+.requirements-box li::before {
+    content: "✓";
+    color: #0ea5e9;
+    font-weight: bold;
+    margin-right: 12px;
+}
+
+
+/* ==============================
+   Footer
+================================= */
+
+footer {
+    background: #111827;
+    color: #cbd5e1;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+
+/* ==============================
+   Responsive Design
+================================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .hero-card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .timeline {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .page-header h1 {
+        font-size: 34px;
+    }
+
+    .skills-grid,
+    .timeline {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 50px 5%;
+    }
+
+}

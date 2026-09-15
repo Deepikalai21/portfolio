@@ -195,9 +195,40 @@
     .edu-row{grid-template-columns:1fr;}
     .edu-row .loc{justify-self:start;}
   }
+
+/* Modern portfolio navbar + theme */
+:root{--bg:#070A14;--panel:#10162A;--panel-2:#151D36;--line:rgba(167,139,250,.20);--line-soft:rgba(148,163,184,.10);--ink:#F5F3FF;--ink-dim:#A7ABC1;--amber:#A78BFA;--cyan:#38BDF8;}
+body{background:radial-gradient(circle at 10% 0%,rgba(124,58,237,.18),transparent 28%),radial-gradient(circle at 90% 10%,rgba(14,165,233,.12),transparent 25%),linear-gradient(var(--line-soft) 1px,transparent 1px) 0 0/48px 48px,linear-gradient(90deg,var(--line-soft) 1px,transparent 1px) 0 0/48px 48px,var(--bg);}
+.navbar{position:sticky;top:0;z-index:1000;background:rgba(7,10,20,.90);border-bottom:1px solid var(--line);backdrop-filter:blur(14px);}
+.nav-inner{max-width:1100px;min-height:78px;margin:auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;gap:18px;}
+.nav-brand{font-family:'IBM Plex Mono',monospace;font-size:19px;font-weight:600;letter-spacing:.08em;text-decoration:none}.nav-brand span{color:var(--cyan)}
+.nav-links{display:flex;gap:4px;align-items:center;flex-wrap:wrap}.nav-links a{font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--ink-dim);text-decoration:none;padding:12px 13px;border:1px solid transparent;border-radius:7px}.nav-links a:hover{color:var(--ink);border-color:var(--line);background:rgba(167,139,250,.08)}.nav-links .nav-contact{background:linear-gradient(135deg,var(--amber),var(--cyan));color:#070A14;font-weight:600}.nav-toggle{display:none;background:transparent;color:var(--ink);border:1px solid var(--line);padding:7px 10px;border-radius:7px;font-size:18px}
+.panel{background:linear-gradient(145deg,rgba(167,139,250,.07),rgba(56,189,248,.02));border-radius:10px}.tag{border-radius:999px;color:var(--cyan);border-color:rgba(56,189,248,.35)}.chip{border-radius:999px;background:rgba(167,139,250,.06)}section{scroll-margin-top:80px}
+@media(max-width:760px){.nav-toggle{display:block}.nav-links{display:none;position:absolute;top:66px;left:0;right:0;background:rgba(7,10,20,.98);padding:12px 28px 18px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch}.nav-links.open{display:flex}.nav-links a{padding:12px}.nav-inner{min-height:60px}}
+
+/* Larger, more readable typography */
+body{font-size:17px;}
+.role{font-size:21px;max-width:760px;}
+.summary-grid p{font-size:17px;}
+.sec-sub{font-size:17px;max-width:760px;}
+h2.sec-title{font-size:30px;}
+.project-head h3{font-size:25px;}
+.project-panel p{font-size:17px !important;}
+.project-panel ul{font-size:16.5px;}
+.t-head h4{font-size:19px;}
+.t-item p.t-desc{font-size:16px;}
+.edu-row .q{font-size:17px;}
+.edu-row .inst{font-size:15px;}
+footer p{font-size:16px;}
+.nav-inner{max-width:1100px;min-height:78px;}
+.nav-brand{font-size:19px;}
+.nav-links{gap:7px;}
+.nav-links a{font-size:14px;padding:12px 13px;}
+@media(max-width:760px){.nav-inner{min-height:68px}.nav-links{top:68px}.nav-links a{font-size:15px;padding:13px}.role{font-size:19px}h2.sec-title{font-size:27px}}
 </style>
 </head>
-<body>
+<body id="top">
+<nav class="navbar"><div class="nav-inner"><a class="nav-brand" href="#top">DEEPIKA<span>_</span></a><button class="nav-toggle" aria-label="Toggle navigation">☰</button><div class="nav-links"><a href="#summary">About</a><a href="#skills">Skills</a><a href="#architecture">AWS VPC</a><a href="#project">Projects</a><a href="#cicd">CI/CD</a><a href="#experience">Experience</a><a href="#education">Education</a><a class="nav-contact" href="#contact">Contact</a></div></div></nav>
 
 <div class="wrap">
   <header class="hero">
@@ -266,61 +297,14 @@
   <section id="architecture">
     <h2 class="sec-title">AWS Architecture — VPC Practice Build</h2>
     <p class="sec-sub">A hands-on networking exercise: a custom VPC with public and private subnets, an Internet Gateway, route tables and security-group-bound EC2 instances. Built to practice how AWS traffic flow and isolation actually work, not a production deployment.</p>
-    <div class="diagram-wrap">
-      <div class="diagram-caption">
-        <span class="cap-label">fig. 01 — vpc-practice-01 · ap-south-1</span>
-        <span class="tag">PRACTICE BUILD</span>
+    <div class="panel project-panel">
+      <div class="project-head">
+        <div><h3>AWS VPC Practice Project</h3><div class="stack">Amazon VPC · EC2 · Subnets · Internet Gateway · Route Tables · Security Groups</div></div>
+        <span class="tag">AWS NETWORKING</span>
       </div>
-      <svg viewBox="0 0 920 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
-        <!-- Internet -->
-        <circle cx="60" cy="60" r="26" fill="none" stroke="#5EEAD4" stroke-width="1.5"/>
-        <text x="60" y="65" fill="#5EEAD4" font-size="10" text-anchor="middle">WWW</text>
-        <line x1="86" y1="60" x2="160" y2="60" stroke="#5EEAD4" stroke-width="1.5" stroke-dasharray="4 3"/>
-
-        <!-- Internet Gateway -->
-        <rect x="160" y="42" width="110" height="36" fill="none" stroke="#FF9900" stroke-width="1.5"/>
-        <text x="215" y="64" fill="#FF9900" font-size="11" text-anchor="middle">Internet Gateway</text>
-        <line x1="215" y1="78" x2="215" y2="112" stroke="#FF9900" stroke-width="1.5"/>
-
-        <!-- VPC box -->
-        <rect x="40" y="112" width="840" height="280" fill="rgba(255,255,255,0.015)" stroke="#93A5B8" stroke-width="1.2" stroke-dasharray="2 4"/>
-        <text x="58" y="132" fill="#93A5B8" font-size="12">VPC · 10.0.0.0/16</text>
-
-        <!-- Route table -->
-        <rect x="170" y="150" width="130" height="34" fill="none" stroke="#5EEAD4" stroke-width="1.2"/>
-        <text x="235" y="171" fill="#5EEAD4" font-size="10.5" text-anchor="middle">Route Table</text>
-
-        <!-- Public subnet -->
-        <rect x="90" y="200" width="330" height="170" fill="rgba(255,153,0,0.04)" stroke="#FF9900" stroke-width="1.2"/>
-        <text x="106" y="222" fill="#FF9900" font-size="11">Public Subnet · 10.0.1.0/24</text>
-
-        <!-- Security group in public subnet -->
-        <rect x="120" y="244" width="260" height="100" fill="none" stroke="#5EEAD4" stroke-width="1" stroke-dasharray="3 3"/>
-        <text x="132" y="260" fill="#5EEAD4" font-size="9.5">Security Group · web-sg</text>
-        <rect x="150" y="272" width="90" height="52" fill="rgba(255,255,255,0.04)" stroke="#E7EEF5" stroke-width="1.2"/>
-        <text x="195" y="294" fill="#E7EEF5" font-size="10" text-anchor="middle">EC2</text>
-        <text x="195" y="308" fill="#93A5B8" font-size="8.5" text-anchor="middle">web server</text>
-
-        <!-- Private subnet -->
-        <rect x="460" y="200" width="330" height="170" fill="rgba(94,234,212,0.03)" stroke="#5EEAD4" stroke-width="1.2"/>
-        <text x="476" y="222" fill="#5EEAD4" font-size="11">Private Subnet · 10.0.2.0/24</text>
-
-        <rect x="490" y="244" width="260" height="100" fill="none" stroke="#FF9900" stroke-width="1" stroke-dasharray="3 3"/>
-        <text x="502" y="260" fill="#FF9900" font-size="9.5">Security Group · app-sg</text>
-        <rect x="600" y="272" width="90" height="52" fill="rgba(255,255,255,0.04)" stroke="#E7EEF5" stroke-width="1.2"/>
-        <text x="645" y="294" fill="#E7EEF5" font-size="10" text-anchor="middle">EC2</text>
-        <text x="645" y="308" fill="#93A5B8" font-size="8.5" text-anchor="middle">app instance</text>
-
-        <!-- connectors -->
-        <line x1="235" y1="184" x2="235" y2="200" stroke="#5EEAD4" stroke-width="1.2"/>
-        <line x1="420" y1="285" x2="460" y2="285" stroke="#93A5B8" stroke-width="1.2" stroke-dasharray="3 3"/>
-        <text x="440" y="278" fill="#93A5B8" font-size="8" text-anchor="middle">route</text>
-      </svg>
-      <div class="note-list">
-        <div><b>Internet Gateway</b> attached to the VPC to allow the public subnet to reach and be reached from the internet.</div>
-        <div><b>Route Tables</b> configured to send public-subnet traffic through the IGW, keeping the private subnet isolated.</div>
-        <div><b>Security Groups</b> scoped per subnet — a web-facing group for the public EC2 instance, a tighter app group for the private one.</div>
-      </div>
+      <p style="color:#C9D6E3;line-height:1.8;font-size:15px;margin:0;">
+        Designed and configured a custom <b style="color:var(--ink);">Amazon VPC</b> to build practical knowledge of AWS networking and secure resource communication. The project included public and private subnets, an Internet Gateway, route tables, security groups, and EC2 instances. I practiced controlling traffic, separating public and private resources, and applying security-group rules for controlled access. This hands-on project strengthened my understanding of VPC networking, subnetting, routing, EC2 deployment, and basic cloud security.
+      </p>
     </div>
   </section>
 
@@ -446,5 +430,9 @@
   </footer>
 </div>
 
-</body>
+<script>
+const toggle=document.querySelector('.nav-toggle'), links=document.querySelector('.nav-links');
+toggle.addEventListener('click',()=>links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+</script></body>
 </html>
